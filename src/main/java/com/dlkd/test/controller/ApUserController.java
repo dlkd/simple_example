@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/v1/login")
-@Api(value = "app用户登录",tags = "app用户登录")
+@Api(value = "用户登录",tags = "用户登录")
 public class ApUserController {
 
     @Autowired
@@ -32,7 +32,7 @@ public class ApUserController {
     }
 
     @GetMapping("/getInfo")
-    @ApiOperation(value = "获取信息")
+    @ApiOperation(value = "获取用户信息")
     public ResponseResult getInfo(String token) {
         //获取用户信息
         Jws<Claims> jws = AppJwtUtil.getJws(token);
@@ -58,7 +58,7 @@ public class ApUserController {
     }
 
     @GetMapping("/logout")
-    @ApiOperation(value = "退出")
+    @ApiOperation(value = "退出登录")
     public ResponseResult logout(HttpSession session) {
         session.removeAttribute("Admin-Token");
         return ResponseResult.okResult(200,"退出成功！");

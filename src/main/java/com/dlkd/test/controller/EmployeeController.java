@@ -27,7 +27,7 @@ import org.springframework.stereotype.Controller;
  */
 @RestController
 @RequestMapping("/test/employee")
-@Api(tags = "接口")
+@Api(tags = "员工接口")
 public class EmployeeController {
 
     /**
