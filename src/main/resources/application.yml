@@ -1,0 +1,25 @@
+server:
+  port: 51801
+spring:
+  application:
+    name: leadnews-user
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/quanzhan_test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+# 设置Mapper接口所对应的XML文件位置，如果你在Mapper接口中有自定义方法，需要进行该配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  # 设置别名包扫描路径，通过该属性可以给包中的类注册别名
+  type-aliases-package: com.dlkd.test.pojo
+# Swagger配置
+swagger:
+  enabled: true # 启用Swagger
+  title: 员工测试 # API文档标题
+  description: Knife4j示例API文档 # API文档描述
+  version: 1.0 # API文档版本
+  contact:
+    name: 孙维良 # 联系人姓名
+    email: 825708816@qq.com # 联系人邮箱
+
